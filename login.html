@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Depo Pasir</title>
+    <!-- Link to Google Fonts for Manrope -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&display=swap">
+    <!-- Link to Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/login.css">
+</head>
+<body>
+
+<div class="container d-flex justify-content-center align-items-center vh-100">
+    <div class="login-card p-5 shadow-lg">
+        <div class="text-center">
+            <img src="assets/image/logo/Logo-icon.png" alt="Logo" class="img-fluid mb-4 logo-img">
+            <h3 class="font-weight-bold">Login</h3>
+            <p class="text-muted">Silahkan lakukan Login untuk mengakses<br>Dashboard Depo Pasir</p>
+        </div>
+        <form>
+            <div class="form-group">
+                <label for="email" class="font-weight-bold">EMAIL</label>
+                <input type="email" class="form-control" id="email" placeholder="Masukkan Email" required>
+            </div>
+            <div class="form-group">
+                <label for="password" class="font-weight-bold">PASSWORD</label>
+                <div class="input-group">
+                    <input type="password" class="form-control" id="password" placeholder="Masukkan Password" required>
+                    <div class="input-group-append">
+                        <span class="input-group-text">
+                            <i class="fas fa-eye-slash"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Switch Button -->
+            <div class="form-group form-check form-switch mb-4">
+                <input type="checkbox" class="form-check-input" id="pemilikDepo">
+                <label class="form-check-label" for="pemilikDepo">Saya Pemilik Depo Pasir</label>
+            </div>
+
+            <!-- Login Button -->
+            <button type="button" id="loginBtn" class="btn btn-primary btn-block mt-4 login-btn">Login</button>
+        </form>
+    </div>
+</div>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!-- Font Awesome for icons -->
+<script src="https://kit.fontawesome.com/584e9b46ff.js" crossorigin="anonymous"></script>
+
+<!-- Custom Script -->
+<script>
+    document.getElementById('loginBtn').addEventListener('click', function() {
+        // Get the status of the switch
+        const isPemilik = document.getElementById('pemilikDepo').checked;
+
+        // Redirect based on the status
+        if (isPemilik) {
+            window.location.href = 'dashboard.html';
+        } else {
+            window.location.href = 'dashboard-karyawan.html';
+        }
+    });
+</script>
+
+</body>
+</html>

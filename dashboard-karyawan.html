@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Karyawan</title>
+    <!-- Link to Google Fonts for Manrope -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&display=swap">
+    <!-- Link to Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="assets/css/dashboard.css">
+    <!-- Link to Chart.js for creating charts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div class="container-fluid h-100">
+    <div class="row h-100">
+        <!-- Sidebar -->
+        <nav id="sidebar" class="col-md-2 d-none d-md-block bg-dark text-white sidebar">
+            <div class="d-flex flex-column h-100">
+                <div class="logo py-4 text-center">
+                    <img src="assets\image\logo\Logo-icon.png" alt="Logo" class="img-fluid mb-2" style="max-width: 60px;">
+                    <h5 class="font-weight-bold">Depo Pasir</h5>
+                </div>
+                <ul class="nav flex-column flex-grow-1">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="dashboard-karyawan.html">
+                            <span class="menu-icon"><i class="fas fa-home"></i></span> Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="data-pasir-karyawan.html">
+                            <span class="menu-icon"><i class="fas fa-shopping-cart"></i></span> Data Pasir
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="stok-pasir-karyawan.html">
+                            <span class="menu-icon"><i class="fas fa-box"></i></span> Kelola Stok Pasir
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">
+                            <span class="menu-icon"><i class="fas fa-sign-out-alt"></i></span> Logout
+                        </a>
+                    </li>
+                </ul>
+                <div class="mt-auto p-3 text-center">
+                    <!-- You can add any footer content here -->
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main role="main" class="col-md-10 ml-sm-auto col-lg-10 px-md-4 main-content">
+            <!-- Topbar -->
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
+                <h1 class="h2">Dashboard</h1>
+                <div class="d-flex align-items-center">
+                    <!-- Search Icon -->
+                    <div class="input-group input-group-sm mr-3" style="width: 200px;">
+                        <input type="text" class="form-control" placeholder="Cari">
+                        <div class="input-group-append">
+                            <span class="input-group-text">
+                                <i class="fas fa-search"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <!-- User Profile -->
+                    <div class="d-flex align-items-center">
+                        <img src="assets\image\profile\profile-2.jpg" alt="Profile Picture" class="rounded-circle mr-2" style="width: 40px; height: 40px;">
+                        <div>
+                            <strong>Karyawan</strong><br>
+                            <small>Admin</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Example Dashboard Content -->
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="card shadow-sm h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">HARI INI</h5>
+                            <p class="card-text display-4">Rp 200.000</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card shadow-sm h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">KARYAWAN</h5>
+                            <p class="card-text display-4">5 Karyawan</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="row">
+                <div class="col-md-8 mb-4">
+                    <div class="card shadow-sm h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Analisis Penjualan</h5>
+                            <!-- Placeholder for chart -->
+                            <canvas id="salesChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow-sm h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Data Pasir</h5>
+                            <div class="row">
+                                <div class="col-md-6 mb-2">
+                                    <div class="data-item p-2 bg-light rounded text-center">
+                                        <img src="assets\image\product\product-1.jpg" alt="Pasir Urug" class="img-fluid mb-2">
+                                        <p>Pasir Urug</p>
+                                        <p>STOK: 19</p>
+                                        <p>Rp 12.000/ m3</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-2">
+                                    <div class="data-item p-2 bg-light rounded text-center">
+                                        <img src="assets\image\product\product-1.jpg" alt="Pasir Beton" class="img-fluid mb-2">
+                                        <p>Pasir Beton</p>
+                                        <p>STOK: 19</p>
+                                        <p>Rp 12.000/ m3</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-2">
+                                    <div class="data-item p-2 bg-light rounded text-center">
+                                        <img src="assets\image\product\product-1.jpg" alt="Pasir Mundu" class="img-fluid mb-2">
+                                        <p>Pasir Mundu</p>
+                                        <p>STOK: 19</p>
+                                        <p>Rp 12.000/ m3</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-2">
+                                    <div class="data-item p-2 bg-light rounded text-center">
+                                        <img src="assets\image\product\product-1.jpg" alt="Pasir Subang" class="img-fluid mb-2">
+                                        <p>Pasir Subang</p>
+                                        <p>STOK: 19</p>
+                                        <p>Rp 12.000/ m3</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!-- Font Awesome for icons -->
+<script src="https://kit.fontawesome.com/584e9b46ff.js" crossorigin="anonymous"></script>
+<!-- Script for Chart.js -->
+</body>
+</html>

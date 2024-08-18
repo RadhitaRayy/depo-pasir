@@ -1,0 +1,140 @@
+/* Global Styles */
+body {
+    font-family: 'Manrope', sans-serif;
+    background-color: #FAFAF6;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container Styles */
+.container {
+    max-width: 550px; /* Adjusted size for a larger form */
+}
+
+/* Login Card Styles */
+.login-card {
+    background-color: #fff;
+    border-radius: 20px; /* Added rounded corners */
+    padding: 50px; /* Increased padding */
+    width: 100%; /* Ensures the card takes full width of the container */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow for a lifted effect */
+}
+
+/* Logo Image Styles */
+.logo-img {
+    max-width: 120px; /* Adjusted logo size */
+    border-radius: 15px; /* Rounded corners for the logo */
+}
+
+/* Heading Styles */
+h3 {
+    color: #16625D;
+    font-size: 2rem; /* Larger font size for the heading */
+    margin-bottom: 20px;
+}
+
+/* Paragraph Styles */
+p {
+    color: #6c757d;
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+}
+
+/* Form Group Label Styles */
+.form-group label {
+    color: #6c757d;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+}
+
+/* Form Control Styles */
+.form-control {
+    height: calc(2.75em + 0.75rem + 2px); /* Increased height */
+    padding: 0.875rem 1.25rem;
+    font-size: 1.1rem;
+    border-radius: 12px; /* Slightly more rounded corners */
+    border: 1px solid #ced4da;
+    background-color: #f8f9fa; /* Light background color for input fields */
+}
+
+/* Input Group Text Styles */
+.input-group-text {
+    background-color: #fff;
+    border-left: 0;
+    border-radius: 0 12px 12px 0;
+    padding: 0 0.75rem;
+    font-size: 1.1rem;
+    border-color: #ced4da;
+}
+
+.input-group-text i {
+    color: #6c757d;
+}
+
+/* Switch Styles */
+.form-check {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px; /* Add space below the switch */
+}
+
+.form-check-input {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 2.2em; /* Width of the switch */
+    height: 1.1em; /* Height of the switch */
+    border-radius: 1em; /* Rounded corners for the switch */
+    background-color: #ddd; /* Default background color */
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s;
+}
+
+.form-check-input::before {
+    content: '';
+    display: block;
+    width: 1em; /* Knob size */
+    height: 1em; /* Knob size */
+    border-radius: 50%;
+    background-color: #fff; /* Knob color */
+    position: absolute;
+    top: 0.05em;
+    left: 0.1em;
+    transition: transform 0.3s;
+}
+
+.form-check-input:checked {
+    background-color: #16625D; /* Switch background color when checked */
+}
+
+.form-check-input:checked::before {
+    transform: translateX(1.1em); /* Move the switch knob when checked */
+}
+
+.form-check-label {
+    margin-left: 10px; /* Space between switch and label */
+    color: #6c757d;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+}
+
+/* Button Styles */
+.login-btn {
+    background-color: #16625D;
+    border: none;
+    height: 55px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: white;
+    display: flex;
+    align-items: center; /* Vertically center the text */
+    justify-content: center; /* Horizontally center the text */
+    text-decoration: none; /* Removes underline */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.login-btn:hover {
+    background-color: #14524f;
+}

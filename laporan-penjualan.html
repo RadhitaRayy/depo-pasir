@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laporan Penjualan</title>
+    <!-- Link to Google Fonts for Manrope -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&display=swap">
+    <!-- Link to Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="assets/css/dashboard.css">
+    <!-- Font Awesome for icons -->
+    <script src="https://kit.fontawesome.com/584e9b46ff.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="container-fluid h-100">
+    <div class="row h-100">
+        <!-- Sidebar -->
+        <nav id="sidebar" class="col-md-2 d-none d-md-block bg-dark text-white sidebar">
+            <div class="d-flex flex-column h-100">
+                <div class="logo py-4 text-center">
+                    <img src="assets/image/logo/Logo-icon.png" alt="Logo" class="img-fluid mb-2" style="max-width: 60px;">
+                    <h5 class="font-weight-bold">Depo Pasir</h5>
+                </div>
+                <ul class="nav flex-column flex-grow-1">
+                    <li class="nav-item">
+                        <a class="nav-link" href="dashboard.html">
+                            <span class="menu-icon"><i class="fas fa-home"></i></span> Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="data-pasir.html">
+                            <span class="menu-icon"><i class="fas fa-shopping-cart"></i></span> Data Pasir
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="stok-pasir.html">
+                            <span class="menu-icon"><i class="fas fa-box"></i></span> Kelola Stok Pasir
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="laporan-penjualan.html">
+                            <span class="menu-icon"><i class="fas fa-chart-line"></i></span> Laporan Penjualan
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">
+                            <span class="menu-icon"><i class="fas fa-sign-out-alt"></i></span> Logout
+                        </a>
+                    </li>
+                </ul>
+                <div class="mt-auto p-3 text-center">
+                    <!-- You can add any footer content here -->
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main role="main" class="col-md-10 ml-sm-auto col-lg-10 px-md-4 main-content">
+            <!-- Topbar -->
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
+                <h1 class="h2">Laporan Penjualan</h1>
+                <div class="d-flex align-items-center">
+                    <!-- Search Box -->
+                    <div class="input-group input-group-sm mr-3" style="width: 200px;">
+                        <input type="text" class="form-control" placeholder="Cari">
+                        <div class="input-group-append">
+                            <span class="input-group-text">
+                                <i class="fas fa-search"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <!-- User Profile -->
+                    <div class="d-flex align-items-center">
+                        <img src="assets/image/profile/profile-1.jpg" alt="Profile Picture" class="rounded-circle mr-2" style="width: 40px; height: 40px;">
+                        <div>
+                            <strong>Pemilik</strong><br>
+                            <small>Super Admin</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Filter Section -->
+            <div class="d-flex justify-content-start align-items-center mb-4">
+                <div class="form-group mb-0 mr-3">
+                    <label for="filterStartDate">Mulai</label>
+                    <input type="date" class="form-control" id="filterStartDate">
+                </div>
+                <div class="form-group mb-0 mr-3">
+                    <label for="filterEndDate">Akhir</label>
+                    <input type="date" class="form-control" id="filterEndDate">
+                </div>
+                <div class="form-group mb-0">
+                    <label>&nbsp;</label><br>
+                    <button class="btn btn-primary">Filter</button>
+                </div>
+            </div>
+
+            <!-- Laporan Penjualan Table -->
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover">
+                    <thead class="thead-light">
+                        <tr>
+                            <th>No</th>
+                            <th>Tanggal</th>
+                            <th>Nama Pasir</th>
+                            <th>Jumlah Terjual (m<sup>3</sup>)</th>
+                            <th>Total Harga</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>2023-08-15</td>
+                            <td>Pasir Urug</td>
+                            <td>50</td>
+                            <td>Rp 600.000</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>2023-08-16</td>
+                            <td>Pasir Beton</td>
+                            <td>30</td>
+                            <td>Rp 450.000</td>
+                        </tr>
+                        <!-- Tambahkan lebih banyak baris laporan seperti ini -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Summary Section -->
+            <div class="mt-4">
+                <h4>Ringkasan Penjualan</h4>
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Total Penjualan</h5>
+                                <p class="card-text">Rp 1.050.000</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Jumlah Pasir Terjual</h5>
+                                <p class="card-text">80 m<sup>3</sup></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Penjualan Tertinggi</h5>
+                                <p class="card-text">Pasir Urug - 50 m<sup>3</sup></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+</div>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

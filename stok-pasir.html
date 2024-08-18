@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kelola Stok Pasir</title>
+    <!-- Link to Google Fonts for Manrope -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&display=swap">
+    <!-- Link to Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="assets/css/dashboard.css">
+    <!-- Font Awesome for icons -->
+    <script src="https://kit.fontawesome.com/584e9b46ff.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="container-fluid h-100">
+    <div class="row h-100">
+        <!-- Sidebar -->
+        <nav id="sidebar" class="col-md-2 d-none d-md-block bg-dark text-white sidebar">
+            <div class="d-flex flex-column h-100">
+                <div class="logo py-4 text-center">
+                    <img src="assets/image/logo/Logo-icon.png" alt="Logo" class="img-fluid mb-2" style="max-width: 60px;">
+                    <h5 class="font-weight-bold">Depo Pasir</h5>
+                </div>
+                <ul class="nav flex-column flex-grow-1">
+                    <li class="nav-item">
+                        <a class="nav-link" href="dashboard.html">
+                            <span class="menu-icon"><i class="fas fa-home"></i></span> Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="data-pasir.html">
+                            <span class="menu-icon"><i class="fas fa-shopping-cart"></i></span> Data Pasir
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="stok-pasir.html">
+                            <span class="menu-icon"><i class="fas fa-box"></i></span> Kelola Stok Pasir
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="laporan-penjualan.html">
+                            <span class="menu-icon"><i class="fas fa-chart-line"></i></span> Laporan Penjualan
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">
+                            <span class="menu-icon"><i class="fas fa-sign-out-alt"></i></span> Logout
+                        </a>
+                    </li>
+                </ul>
+                <div class="mt-auto p-3 text-center">
+                    <!-- You can add any footer content here -->
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main role="main" class="col-md-10 ml-sm-auto col-lg-10 px-md-4 main-content">
+            <!-- Topbar -->
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
+                <h1 class="h2">Kelola Stok Pasir</h1>
+                <div class="d-flex align-items-center">
+                    <!-- Search Icon -->
+                    <div class="input-group input-group-sm mr-3" style="width: 200px;">
+                        <input type="text" class="form-control" placeholder="Cari">
+                        <div class="input-group-append">
+                            <span class="input-group-text">
+                                <i class="fas fa-search"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <!-- User Profile -->
+                    <div class="d-flex align-items-center">
+                        <img src="assets/image/profile/profile-1.jpg" alt="Profile Picture" class="rounded-circle mr-2" style="width: 40px; height: 40px;">
+                        <div>
+                            <strong>Pemilik</strong><br>
+                            <small>Super Admin</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stok Pasir Table -->
+            <div class="mb-3">
+                <button class="btn btn-primary" data-toggle="modal" data-target="#tambahStokModal">Tambah Stok</button>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover">
+                    <thead class="thead-light">
+                        <tr>
+                            <th>No</th>
+                            <th>Nama Pasir</th>
+                            <th>Jumlah Stok (m<sup>3</sup>)</th>
+                            <th>Harga per m<sup>3</sup></th>
+                            <th>Status</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Pasir Urug</td>
+                            <td>100</td>
+                            <td>Rp 12.000</td>
+                            <td><span class="badge badge-success">Tersedia</span></td>
+                            <td>
+                                <a href="#" class="text-primary mr-2" data-toggle="modal" data-target="#editStokModal"><i class="fas fa-edit"></i></a>
+                                <a href="#" class="text-danger"><i class="fas fa-trash-alt"></i></a>
+                            </td>
+                        </tr>
+                        <!-- Tambahkan lebih banyak baris seperti ini -->
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+</div>
+
+<!-- Modal for Tambah Stok -->
+<div class="modal fade" id="tambahStokModal" tabindex="-1" aria-labelledby="tambahStokModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="tambahStokModalLabel">Tambah Stok Pasir</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="namaPasirTambah">Nama Pasir</label>
+                        <input type="text" class="form-control" id="namaPasirTambah" placeholder="Masukkan nama pasir">
+                    </div>
+                    <div class="form-group">
+                        <label for="jumlahStokTambah">Jumlah Stok (m<sup>3</sup>)</label>
+                        <input type="number" class="form-control" id="jumlahStokTambah" placeholder="Masukkan jumlah stok">
+                    </div>
+                    <div class="form-group">
+                        <label for="hargaPasirTambah">Harga per m<sup>3</sup></label>
+                        <input type="number" class="form-control" id="hargaPasirTambah" placeholder="Masukkan harga pasir">
+                    </div>
+                    <div class="form-group">
+                        <label for="statusPasirTambah">Status</label>
+                        <select class="form-control" id="statusPasirTambah">
+                            <option value="tersedia">Tersedia</option>
+                            <option value="tidakTersedia">Tidak Tersedia</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                <button type="button" class="btn btn-primary">Simpan</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for Edit Stok -->
+<div class="modal fade" id="editStokModal" tabindex="-1" aria-labelledby="editStokModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editStokModalLabel">Edit Stok Pasir</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="namaPasirEdit">Nama Pasir</label>
+                        <input type="text" class="form-control" id="namaPasirEdit" placeholder="Masukkan nama pasir">
+                    </div>
+                    <div class="form-group">
+                        <label for="jumlahStokEdit">Jumlah Stok (m<sup>3</sup>)</label>
+                        <input type="number" class="form-control" id="jumlahStokEdit" placeholder="Masukkan jumlah stok">
+                    </div>
+                    <div class="form-group">
+                        <label for="hargaPasirEdit">Harga per m<sup>3</sup></label>
+                        <input type="number" class="form-control" id="hargaPasirEdit" placeholder="Masukkan harga pasir">
+                    </div>
+                    <div class="form-group">
+                        <label for="statusPasirEdit">Status</label>
+                        <select class="form-control" id="statusPasirEdit">
+                            <option value="tersedia">Tersedia</option>
+                            <option value="tidakTersedia">Tidak Tersedia</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                <button type="button" class="btn btn-primary">Simpan Perubahan</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
